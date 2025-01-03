@@ -21,22 +21,47 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/User'
+        "500":
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorPayload'
 components:
   schemas:
+    ErrorPayload:
+      type: object
+      properties:
+        reason:
+          type: string
+          description: Reason phrase
+        path:
+          type: string
+          description: Request path
+        method:
+          type: string
+          description: Method type of the request
+        message:
+          type: string
+          description: Error message
+        timestamp:
+          type: string
+          description: Timestamp of the error
+        status:
+          type: integer
+          description: Relevant HTTP status code
+          format: int32
     User:
       required:
       - email
       - id
       - name
-      - phoneNumber
       type: object
       properties:
         id:
           type: integer
           format: int64
         name:
-          type: string
-        phoneNumber:
           type: string
         email:
           type: string
