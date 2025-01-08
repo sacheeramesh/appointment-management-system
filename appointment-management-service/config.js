@@ -10,6 +10,7 @@ const dbPort = '';
 // Twilio configruation
 const twilioAccountSid = '';
 const twilioAuthToken = '';
+const twilioFromPhoneNumber = '';
 
 // User Manager configruation
 const userManagerServiceUrl = '';
@@ -23,6 +24,7 @@ module.exports = {
     dbPort,
     twilioAccountSid,
     twilioAuthToken,
+    twilioFromPhoneNumber,
     userManagerServiceUrl,
     userManagerAPIkey
 };
